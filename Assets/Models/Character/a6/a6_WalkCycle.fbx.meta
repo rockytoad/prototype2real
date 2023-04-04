@@ -20,9 +20,20 @@ ModelImporter:
     removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
+      copied configuration does not match position in animation file:\n\t'LeftUpLeg'
+      : position error = 138.427856 mm\n\t'LeftLeg' : position error = 77.805519
+      mm\n\t'LeftFoot' : position error = 85.581947 mm\n\t'LeftToe' : position error
+      = 238.043137 mm\n\t'RightUpLeg' : position error = 138.427338 mm\n\t'RightLeg'
+      : position error = 77.806557 mm\n\t'RightFoot' : position error = 85.581276
+      mm\n\t'RightToe' : position error = 238.043655 mm\n"
     animationImportErrors: 
-    animationImportWarnings: 
+    animationImportWarnings: "\nClip 'a6_WalkCycle' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'Spine1' has translation animation that
+      will be discarded.\n\t'Spine2' has translation animation that will be discarded.\n\t'Spine2'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Neck'
+      has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
