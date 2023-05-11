@@ -23,7 +23,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: spoereas_blade_mat
+  m_Name: spear_rope_mat
   m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
   m_ValidKeywords:
   - _DISABLE_SSR_TRANSPARENT
@@ -50,7 +50,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: c7357000f64ad584fae69198d58ad488, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9fe60864322ea3c4d9bc2f17a6c1c105, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -86,15 +86,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c7357000f64ad584fae69198d58ad488, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9fe60864322ea3c4d9bc2f17a6c1c105, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 2800000, guid: 78c694e08146abe41a051c54258253a5, type: 3}
+        m_Texture: {fileID: 2800000, guid: a12858cc189a4734b9c127af593a3b41, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: e1b5ad8347ca3ff40ada1cb8ddc3b297, type: 3}
+        m_Texture: {fileID: 2800000, guid: 74f612ab12705754bb2fd5edb87209b2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
@@ -139,8 +139,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AORemapMax: 0.77647054
-    - _AORemapMin: 0.21176471
+    - _AORemapMax: 0.58823603
+    - _AORemapMin: 0.09411765
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
@@ -196,8 +196,8 @@ Material:
     - _LinkDetailsWithBase: 1
     - _MaterialID: 1
     - _Metallic: 0
-    - _MetallicRemapMax: 1
-    - _MetallicRemapMin: 0.75882345
+    - _MetallicRemapMax: 0.9117646
+    - _MetallicRemapMin: 0.42352942
     - _NormalMapSpace: 0
     - _NormalScale: 1
     - _OpaqueCullMode: 2
@@ -211,8 +211,8 @@ Material:
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
     - _Smoothness: 0.5
-    - _SmoothnessRemapMax: 0.87647057
-    - _SmoothnessRemapMin: 0.31176472
+    - _SmoothnessRemapMax: 0.35882354
+    - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
     - _SpecularOcclusionMode: 1
