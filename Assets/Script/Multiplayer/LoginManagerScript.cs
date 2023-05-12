@@ -17,11 +17,17 @@ public class LoginManagerScript : MonoBehaviour
     UnityTransport transport;
     public TMP_InputField joinCodeInput;
     public string joinCode;
+    public List<GameObject> SpawnPoints;
+    int spawnedPoint = 4;
+    public List<string> usedNames;
+    bool isHost = true;
+    string HostCode;
+    int nameCounter;
 
     public async void Client()
     {
-        //setIpAddress();
-        joinCode = joinCodeInput.GetComponent<TMP_InputField>().text;
+        //setIpAddress();      
+        string codeServer = joinCodeInput.GetComponent<TMP_InputField>().text;
         if (RelayManagerScript.Instance.IsRelayEnabled && !string.IsNullOrEmpty(joinCode))
         {
             await RelayManagerScript.Instance.JoinRelay(joinCode);
@@ -119,12 +125,37 @@ public class LoginManagerScript : MonoBehaviour
 
     private bool approveConnection(string clientData, string serverData)
     {
-        bool isApprove = System.String.Equals(clientData.Trim(), serverData.Trim()) ? false: true;
+        nameCounter = 0;
+        bool isApprove = System.String.Equals(clientData.Trim(), serverData.Trim()) ? false : true;
+        string[] strlist = clientData.Split(' ', 2, System.StringSplitOptions.None);
+        Debug.Log("1:" + strlist[0] + " " + "2:" + strlist[1]);
+        foreach (string name in usedNames)
+        {
+            if (strlist[0] == name)
+            {
+                nameCounter++;
+            }
+
+        }
+        if (strlist[1] != HostCode || nameCounter != 0)
+        {
+            isApprove = false;
+        }
+        if (isApprove != false)
+        {
+            usedNames.Add(strlist[0]);
+        }
         return isApprove;
     }
     private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request,
         NetworkManager.ConnectionApprovalResponse response)
     {
+        if (isHost == true)
+        {
+            HostCode = joinCodeInput.GetComponent<TMP_InputField>().text;
+            usedNames.Add(userNameInput.GetComponent<TMP_InputField>().text);
+            isHost = false;
+        }
         // The client identifier to be authenticated
         var clientId = request.ClientNetworkId;
 
@@ -167,22 +198,13 @@ public class LoginManagerScript : MonoBehaviour
     {
         Vector3 spawnPos = Vector3.zero;
         Quaternion spawnRot = Quaternion.identity;
-        if (clientId == NetworkManager.Singleton.LocalClientId)
+        int randomNumber = Random.Range(0, 3);
+        while (randomNumber == spawnedPoint)
         {
-            spawnPos = new Vector3(-2, 0, 0); spawnRot = Quaternion.Euler(0, 135, 0);
+            randomNumber = Random.Range(0, 3);
         }
-        else
-        {
-            switch (NetworkManager.Singleton.ConnectedClients.Count)
-            {
-                case 1:
-                    spawnPos = new Vector3(0, 0, 0); spawnRot = Quaternion.Euler(0, 100, 0);
-                    break;
-                case 2:
-                    spawnPos = new Vector3(2, 0, 0); spawnRot = Quaternion.Euler(0, 80, 0);
-                    break;
-            }
-        }
+        spawnedPoint = randomNumber;
+        spawnPos = new Vector3(SpawnPoints[spawnedPoint].transform.position.x, SpawnPoints[spawnedPoint].transform.position.y, SpawnPoints[spawnedPoint].transform.position.z);
         response.Position = spawnPos; response.Rotation = spawnRot;
     }
 

@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class CharacterController : MonoBehaviour
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody))]
+public class CharacterController : NetworkBehaviour
 {
+    
+    private Animator animator;
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
@@ -54,6 +58,7 @@ public class CharacterController : MonoBehaviour
 
     private void Start()
     {
+        if (!IsOwner) return;
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
 
