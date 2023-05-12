@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Playercam : MonoBehaviour
+using Unity.Netcode;
+public class Playercam : NetworkBehaviour
 {
     public float sensX;
     public float sensY;
@@ -14,6 +14,7 @@ public class Playercam : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!IsOwner) return;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
