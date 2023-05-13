@@ -544,7 +544,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   maxSlopeAngle: 2
-  orientation: {fileID: 0}
+  orientation: {fileID: 1728773691}
   state: 0
 --- !u!114 &1589003718001277337
 MonoBehaviour:
