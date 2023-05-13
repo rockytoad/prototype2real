@@ -117,15 +117,16 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.multiplayer.samples.coop": {
-      "version": "file:C:/Users/Admin/Downloads/com.unity.multiplayer.samples.coop-main/com.unity.multiplayer.samples.coop-main/Packages/com.unity.multiplayer.samples.coop",
+      "version": "https://github.com/Unity-Technologies/com.unity.multiplayer.samples.coop.git?path=/Packages/com.unity.multiplayer.samples.coop",
       "depth": 0,
-      "source": "local",
+      "source": "git",
       "dependencies": {
         "com.unity.learn.iet-framework": "1.2.1",
         "com.unity.multiplayer.tools": "1.1.0",
         "com.unity.netcode.gameobjects": "1.1.0",
         "com.unity.services.relay": "1.0.3"
-      }
+      },
+      "hash": "a4cafe20622b588a27b1a11029185345fbebaa20"
     },
     "com.unity.multiplayer.tools": {
       "version": "1.1.0",
@@ -399,10 +400,11 @@
       "url": "https://packages.unity.com"
     },
     "com.veriorpies.parrelsync": {
-      "version": "file:C:/Users/Admin/Downloads/ParrelSync-master/ParrelSync-master/ParrelSync",
+      "version": "https://github.com/VeriorPies/ParrelSync.git?path=/ParrelSync",
       "depth": 0,
-      "source": "local",
-      "dependencies": {}
+      "source": "git",
+      "dependencies": {},
+      "hash": "141b4e1e31966242a6fb7c495b52ac3d1221bc75"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
